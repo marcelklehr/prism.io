@@ -1,0 +1,10 @@
+{
+  "name": "warp",
+  "version": "0.0.0",
+  "dependencies": {
+    "emitter": "component/emitter",
+    "socket.io": "*",
+    "express": "*",
+    "changesets": "*"
+  }
+}

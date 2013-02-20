@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+
+	<head>
+
+		<!-- MISC/META -->
+		<title> ZenPen ~ Minimal Distraction, Maximim Zen </title>
+        <meta charset="utf-8">
+		<meta name="description" content="Zenpen - A minimal web based text editor, for the modern man.">
+        
+		<!-- CSS -->
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/fonts.css" rel="stylesheet">
+
+		<!-- LIBS -->
+		<script src="js/libs/head.min.js"></script>
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="build/build.js"></script>
+		
+		<!-- JS loading in footer -->
+
+    </head>
+
+	<body class="yin">
+
+		<div class="overlay">
+			<div class="share modal">
+				<h1>Save + Share URL</h1>
+				<div class="editable">
+					<input type="text" onclick="javascript:select();"></input>
+				</div>
+			</div>
+			<div class="wordcount modal">
+				<h1>Target Word Count</h1>
+				<div class="editable">
+					<input type="number" name="quantity" value="0" min="0"></input>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-options">
+			<div class="options">
+				<span class="no-overflow">
+					<span class="lengthen ui-inputs">
+						<button class="url useicons">&#xe001;</button>
+						<input class="url-input" type="text" placeholder="Type or Paste URL here"/>
+						<button class="bold">b</button>
+						<button class="italic">i</button>
+						<button class="quote">&rdquo;</button>
+					</span>
+				</span>
+			</div>
+		</div>
+
+		<div class="ui view-mode">
+
+			<div class="wrapper">
+
+				<div class="top viewing">
+					<button id="new" class="new useicons">
+						&#xe007;
+					</button>
+					<label for="new"> New </label>
+					<button id="edit" class="edit useicons">
+						&#xf0ad;
+					</button>
+					<label for="edit"> Edit </label>
+				</div>
+
+				<div class="top editing">
+					<button class="fullscreen useicons">
+						&#xe006;
+					</buttom>
+
+					<button class="color-flip useicons">
+						&#xe000;
+					</button>
+
+					<button class="target useicons">
+						&#xe002;
+					</button>
+
+					<button class="link useicons">
+						&#xe001;
+					</button>
+				</div>
+
+				<div class="bottom">
+					<button class="about">
+						?
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="word-counter">
+			<span class="progress"></span>
+		</div>
+
+		<section>
+			
+			<header contenteditable="false" class="header">
+				This is ZenPen
+			</header>
+
+			<article contenteditable="false" class="content">
+
+				<p>
+					A minimalist writing zone, where you can block out all distractions and get to what's important. The writing!
+				</p>
+				<p>
+					To get started, all you need to do is delete this text (seriously, just highlight it and hit delete), and fill the page with your own fantastic words.
+				</p>
+				<p>
+					You can use <b>bold</b>, <i>italics</i>, <b><i>both</i></b> and <a href="http://zenpen.io"> urls </a> just by highlighting the text and selecting them from the tiny options box that appears above it.
+				</p>
+
+				<blockquote>
+					Quotes are easy to add too!
+				</blockquote>
+
+				<p>
+					Then save and share your writings... everything is passed via URL, so none of your information is stored.
+				</p>
+				<p>
+					Questions/Comments? Click that little question mark at the bottom left of the screen.
+				</p>
+				<p>Happy Typing! ~ <b>Tim Holman (@twholman)</b></p>
+
+			</article>
+
+		</section>
+
+		<!-- JS -->
+		<script type="text/javascript">
+
+			// Load required scripts.	
+			head.js( "js/libs/fullScreen.js",
+				"js/libs/history.min.js",
+				"js/libs/rawinflate.js",
+				"js/libs/rawdeflate.js",
+				"js/utils.js",
+				"js/ui.js",
+				"js/editor.js",
+	        	function(){
+	            	
+	            	// Initiate ZenPen
+                ui.init();
+                editor.init();
+                
+                // initiate warp
+                require('warp')
+	            }
+	        );
+        </script>
+	</body>
+</html>
