@@ -1,0 +1,16 @@
+{
+  "name": "warp",
+  "dependencies": {
+    "marcelklehr/changesets":"*",
+    "component/emitter":"*"
+  },
+  "main": "client.js",
+  "scripts": [
+    "client.js",
+    "lib/History.js",
+    "lib/Connection.js",
+    "lib/Editor.js",
+    "lib/CollabClient.js",
+    "lib/utils.js"
+  ]
+}
