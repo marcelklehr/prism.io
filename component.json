@@ -8,6 +8,7 @@
   "scripts": [
     "client.js",
     "lib/History.js",
+    "lib/Queue.js",
     "lib/Connection.js",
     "lib/Editor.js",
     "lib/CollabClient.js",
