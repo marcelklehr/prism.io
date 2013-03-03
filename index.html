@@ -4,9 +4,9 @@
 	<head>
 
 		<!-- MISC/META -->
-		<title> ZenPen ~ Minimal Distraction, Maximim Zen </title>
+		<title> Warp ~ Minimal Distraction, Maximum Zen, In Real-Time </title>
         <meta charset="utf-8">
-		<meta name="description" content="Zenpen - A minimal web based text editor, for the modern man.">
+		<meta name="description" content="Warp - A minimal web based real-time text editor, for the modern man.">
         
 		<!-- CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -102,13 +102,16 @@
 		<section>
 			
 			<header contenteditable="false" class="header">
-				This is ZenPen
+				This is Warp
 			</header>
 
 			<article contenteditable="false" class="content">
 
 				<p>
 					A minimalist writing zone, where you can block out all distractions and get to what's important. The writing!
+				</p>
+        <p>
+					As if that's not enough, you can easily share this zone with anyone and write together. In real-time.
 				</p>
 				<p>
 					To get started, all you need to do is delete this text (seriously, just highlight it and hit delete), and fill the page with your own fantastic words.
@@ -121,13 +124,9 @@
 					Quotes are easy to add too!
 				</blockquote>
 
-				<p>
-					Then save and share your writings... everything is passed via URL, so none of your information is stored.
-				</p>
-				<p>
-					Questions/Comments? Click that little question mark at the bottom left of the screen.
-				</p>
-				<p>Happy Typing! ~ <b>Tim Holman (@twholman)</b></p>
+				<p>Zenpen is what you see, by Tim Holman</p>
+				<p>Warp is what you feel, by Marcel Klehr</p>
+				<p>Happy editing! <3</p>
 
 			</article>
 
@@ -151,7 +150,16 @@
                 editor.init();
                 
                 // initiate warp
-                require('warp')
+                var warp = require('warp').connect({
+                  document: window.location.pathname.substr(1),
+                  element: $('.content')
+                })
+                /*warp.on('connect', function() {
+                  editor.setEditMode(true)
+                })
+                warp.on('disconnect', function() {
+                  editor.setEditMode(false)
+                })*/
 	            }
 	        );
         </script>
