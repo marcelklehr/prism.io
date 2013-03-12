@@ -26,17 +26,16 @@
 	<body class="yin">
 
 		<div class="overlay">
-			<div class="share modal">
-				<h1>Save + Share URL</h1>
-				<div class="editable">
-					<input type="text" onclick="javascript:select();"></input>
-				</div>
-			</div>
 			<div class="wordcount modal">
 				<h1>Target Word Count</h1>
-				<div class="editable">
+				<div>
 					<input type="number" name="quantity" value="0" min="0"></input>
 				</div>
+			</div>
+
+			<div class="description modal">
+				<h1> About ZenPen </h1>
+				<p>  Zenpen is a minimalist writing zone by <a href="http://tholman.com">Tim Holman</a> (<a href="http://twitter.com/twholman">@twholman</a>), to get you into that zone, where you can focus on the writing - with none of the distractions. ZenPen is open source on <a href="http://github.com/tholman/zenpen">Github</a> (with many improvements on the way!). If you have any questions, hit me up via <a href="mailto:timothy.w.holman@gmail.com">email</a> - ooh, you can follow me on twitter for updates too: <a href="http://twitter.com/twholman">@twholman</a> </p>
 			</div>
 		</div>
 
@@ -54,20 +53,9 @@
 			</div>
 		</div>
 
-		<div class="ui view-mode">
+		<div class="ui">
 
 			<div class="wrapper">
-
-				<div class="top viewing">
-					<button id="new" class="new useicons">
-						&#xe007;
-					</button>
-					<label for="new"> New </label>
-					<button id="edit" class="edit useicons">
-						&#xf0ad;
-					</button>
-					<label for="edit"> Edit </label>
-				</div>
 
 				<div class="top editing">
 					<button class="fullscreen useicons">
@@ -80,10 +68,6 @@
 
 					<button class="target useicons">
 						&#xe002;
-					</button>
-
-					<button class="link useicons">
-						&#xe001;
 					</button>
 				</div>
 
@@ -101,13 +85,15 @@
 
 		<section>
 			
-			<header contenteditable="false" class="header">
+			<header contenteditable="true" class="header">
 				This is Warp
 			</header>
 
-			<article contenteditable="false" class="content">
+			<article contenteditable="true" class="content">
 
-				Hang on for a moment..
+				<p>
+				  Hang on a moment...
+				</p>
 
 			</article>
 
@@ -118,18 +104,15 @@
 
 			// Load required scripts.	
 			head.js( "js/libs/fullScreen.js",
-				"js/libs/history.min.js",
-				"js/libs/rawinflate.js",
-				"js/libs/rawdeflate.js",
 				"js/utils.js",
 				"js/ui.js",
 				"js/editor.js",
-	        	function(){
+	        	function() {
 	            	
 	            	// Initiate ZenPen
                 ui.init();
                 editor.init();
-                
+
                 // initiate warp
                 var warp = require('warp').connect({
                   document: window.location.pathname.substr(1),
@@ -141,8 +124,7 @@
                 warp.on('disconnect', function() {
                   editor.setEditMode(false)
                 })*/
-	            }
-	        );
+	        });
         </script>
 	</body>
 </html>
