@@ -1,5 +1,5 @@
 {
-  "name": "warp",
+  "name": "prism.io",
   "version": "0.0.0",
   "dependencies": {
     "emitter": "component/emitter",

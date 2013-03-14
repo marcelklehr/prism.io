@@ -1,5 +1,5 @@
 {
-  "name": "warp",
+  "name": "prism.io",
   "dependencies": {
     "marcelklehr/changesets":"*",
     "component/emitter":"*"
