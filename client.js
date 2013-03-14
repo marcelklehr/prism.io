@@ -6,13 +6,13 @@
 // KICK ASS!
 exports.connect = function(options) {
   var options =
-  { element: options.element || null
+  { element: options.element || null // compulsory
   , server: options.server || 'http://localhost'
-  , document: options.document || null
+  , document: options.document || null // compulsory
   }
-  for(var prop in options) if (!options[prop]) throw new Error('warp: "'+prop+'" option is not set')
+  for(var prop in options) if (!options[prop]) throw new Error('"'+prop+'" option is not set')
   
-  var socket = io.connect(options.server, { 'reconnection limit': 5000, 'max reconnection attempts': Infinity }).of('warp')
+  var socket = io.connect(options.server, { 'reconnection limit': 5000, 'max reconnection attempts': Infinity }).of('prism.io')
  
   var connection = new Connection(socket)
     , editor = new Editor(options.element)
