@@ -26,7 +26,6 @@ prism.connect({
 ## Todo
 hah!, lots...
 
- * Make it more configurable / the guts more accessable and hackable
  * Wrap changesets in edits to dry up edit transformations
  * MESSAGE QUEUE! Once you start doing async stuff, you have multiple half-digested maessages -- bad thing. And a prefect race condition.
  * Authorization/Authentication

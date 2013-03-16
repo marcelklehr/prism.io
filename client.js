@@ -1,12 +1,14 @@
 ﻿var CollabClient = require('./lib/CollabClient')
   , Connection = require('./lib/Connection')
-  , Editor = require('./lib/Editor')
   , Emitter = require('emitter')
+
+exports.HtmlAdapter = require('./lib/HtmlAdapter')
+exports.TextinputAdapter = require('./lib/TextinputAdapter')
 
 // KICK ASS!
 exports.connect = function(options) {
   var options =
-  { element: options.element || null // compulsory
+  { editor: options.editor || null // compulsory
   , server: options.server || 'http://localhost'
   , document: options.document || null // compulsory
   }
@@ -15,8 +17,7 @@ exports.connect = function(options) {
   var socket = io.connect(options.server, { 'reconnection limit': 5000, 'max reconnection attempts': Infinity }).of('prism.io')
  
   var connection = new Connection(socket)
-    , editor = new Editor(options.element)
-  var client = new CollabClient(options.document, editor, connection)
+  var client = new CollabClient(options.document, options.editor, connection)
   
   return connection
 }

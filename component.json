@@ -10,7 +10,8 @@
     "lib/History.js",
     "lib/Queue.js",
     "lib/Connection.js",
-    "lib/Editor.js",
+    "lib/HtmlAdapter.js",
+    "lib/TextinputAdapter.js",
     "lib/CollabClient.js",
     "lib/utils.js"
   ]
