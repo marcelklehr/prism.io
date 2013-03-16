@@ -18,10 +18,25 @@ server.listen(80)
 var prism = require('prism.io')
 
 prism.connect({
-  document: window.location.pathname
-, element: $('.content') // Any contenteditable element or the body of an wysiwyg editor's iframe
+  document: window.location.pathname // or something else
+, editor: new prism.HtmlAdapter(document.querySelector('.content')) // Any contenteditable element or the body of an wysiwyg editor's iframe
 })
 ```
+
+## prism.connect(options)
+Possible options are:
+
+ * `editor`: An editor adapter
+ * `server`: The server address. Default: `'http://localhost'`
+ * `document`: A string containing the identifier of the document to access
+
+# Adapters
+
+## Class: prism.HtmlAdapter(element)
+Takes any block and inline html element except for inputs.
+
+## Class: prism.TextinputAdapter(element)
+Takes an input element like a `<textarea>` or an `<input type="text">`.
 
 ## Todo
 hah!, lots...
