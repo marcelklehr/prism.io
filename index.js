@@ -22,6 +22,10 @@ module.exports = function(server, opts) {
   else if(server instanceof http.Server) {
     io = socketio.listen(server)
   }
+  
+  else {
+    throw new Error('Server must be either an http.Server or an socketio.Manager')
+  }
 
   var docs = {}
   io.of('prism.io').on('connection', function(socket){
