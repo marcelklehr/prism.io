@@ -9,7 +9,7 @@ exports.TextinputAdapter = require('./lib/TextinputAdapter')
 exports.connect = function(options) {
   var options =
   { editor: options.editor || null // compulsory
-  , server: options.server || 'http://localhost'
+  , server: options.server || '//'+window.location.hostname+':'+window.location.port
   , document: options.document || null // compulsory
   }
   for(var prop in options) if (!options[prop]) throw new Error('"'+prop+'" option is not set')
