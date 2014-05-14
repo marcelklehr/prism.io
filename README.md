@@ -1,6 +1,8 @@
 # prism.io
 Share and edit documents in real-time.
 
+* *Silent reconnect*: Whether the server goes down or the connection drops dead, it doesn't matter. Once the connection is re-established prism will sync everything and you'll be fine.
+
 `npm install prism.io` and `component install marcelklehr/prism.io` (I intend to add a plain, browserified version)
 
 ## Server
@@ -45,7 +47,10 @@ hah!, lots...
  * MESSAGE QUEUE! Once you start doing async stuff, you have multiple half-digested maessages -- bad thing. And a prefect race condition.
  * Authorization/Authentication
  * Investigate on webRTC's DataChannel (client-side peer-to-peer communication)
- * Otherwse make it scale without pain (for the admin, of course! This is gonna be an ordeal for the programmer...)
+ * Otherwise make it scale without pain (for the admin, of course! This is gonna be an ordeal for the programmer...)
+ * Perhaps remove socket.io as a dep and make people add their own transport layer
+ * Sync the dom directly, instead of innerHTML? -- check how meteor guys do it.. perhaps use https://github.com/tomhuda/metamorph.js
+ * multiple connections on one page
 
 ## Problems? Ideas? Inspiration?
 Submit an [issue](http://github.com/marcelklehr/prism.io/issues). Really!

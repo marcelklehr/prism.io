@@ -1,10 +1,10 @@
 {
   "name": "prism.io"
-, "version": "0.0.0"
+, "version": "0.0.1"
 , "dependencies": {
     "emitter": "component/emitter"
   , "socket.io": "*"
-  , "changesets": "*"
+  , "changesets": "0.2.x"
   }
 , "description": "Share and edit documents in real-time. Lightweight and modular alternative to shareJS."
 , "keywords": ["share", "etherpad", "concurrent", "collaborative", "wave", "edit", "editor", "document", "contenteditable", "real-time"]
